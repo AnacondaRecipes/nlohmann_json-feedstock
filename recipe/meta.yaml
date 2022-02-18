@@ -1,6 +1,8 @@
 {% set name = "nlohmann_json" %}
 {% set version = "3.10.5" %}
 {% set sha256 = "5daca6ca216495edf89d167f808d1d03c4a4d929cef7da5e10f135ae1540c7e4" %}
+{% set build_number = "0" %}
+
 
 package:
   name: {{ name|lower }}
@@ -12,7 +14,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: {{ build_number }}
   skip: true  # [win and vc<14]
   # The json library is header only, so we do not need
   # to export the compiler run-time libraries.
@@ -27,7 +29,7 @@ build:
 requirements:
   build:
     - cmake
-    - make  # [unix]
+    - ninja
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host: []  # Empty host dependency section
@@ -47,14 +49,15 @@ test:
     - if exist %LIBRARY_PREFIX%\lib\cmake\nlohmann_jsonTargets.cmake (exit 0) else (exit 1)  # [win]
 
 about:
-  home: http://github.com/nlohmann/json
+  home: https://github.com/nlohmann/json
   license: MIT
   license_family: MIT
   license_file: LICENSE.MIT
   summary: JSON for Modern C++
   description: JSON for Modern C++ is a C++11 JSON parser.
-  doc_url: http://nlohmann.github.io/json/
-  dev_url: http://github.com/nlohmann/json
+  dev_url: https://github.com/nlohmann/json
+  doc_url: https://nlohmann.github.io/json/
+  doc_src_url:  https://github.com/nlohmann/json/doc
 
 extra:
   recipe-maintainers:
