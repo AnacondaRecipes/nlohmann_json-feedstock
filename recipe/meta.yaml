@@ -1,5 +1,5 @@
 {% set name = "nlohmann_json" %}
-{% set version = "3.11.2" %}
+{% set version = "3.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/nlohmann/json/archive/v{{ version }}.tar.gz
-  sha256: d69f9deb6a75e2580465c6c4c5111b89c4dc2fa94e3a85fcd2ffcd9a143d9273
+  sha256: 4b92eb0c06d10683f7447ce9406cb97cd4b453be18d7279320f7b2f025c10187
 
 build:
   number: 0
