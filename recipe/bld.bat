@@ -1,7 +1,7 @@
 cmake ^
 	-G "Ninja" ^
 	-D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
-	-D BUILD_TESTING=OFF ^
+	-D JSON_BuildTests=OFF ^
 	%SRC_DIR%
 
 if errorlevel 1 exit 1
